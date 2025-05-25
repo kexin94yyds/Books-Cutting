@@ -1,95 +1,60 @@
-# 🌟 Spiral-Up Learning Tools
+# 📚 EPUB切书神技
 
-我的学习螺旋工具集 - 提升学习效率的实用工具库
+智能EPUB电子书切分工具 - 自动识别章节标题，智能命名文件
 
-## 📁 项目结构
-
-```
-Spiral-Up/
-├── scripts/           # 实用脚本工具
-│   └── 切书神技.zsh   # 智能EPUB切书工具
-├── projects/          # 完整项目代码
-├── notes/             # 学习笔记和总结  
-├── tools/             # 小工具和实用程序
-├── templates/         # 项目模板和样板代码
-├── docs/              # 项目文档
-│   ├── README.md                    # 详细使用说明
-│   ├── troubleshooting-guide.md     # 故障排除指南
-│   ├── quick-reference.md           # 快速参考
-│   └── project-management-guide.md  # 项目管理指南
-├── examples/          # 使用示例
-└── README.md          # 项目概览
-```
-
-## 🚀 快速开始
-
-### 📚 EPUB切书工具
-
-智能识别章节标题，自动命名文件的电子书切分工具：
+## 🚀 快速使用
 
 ```bash
+# 给脚本添加执行权限
 chmod +x scripts/切书神技.zsh
+
+# 使用脚本处理EPUB文件
 ./scripts/切书神技.zsh 'your-book.epub'
 ```
 
-详细文档：[切书工具使用说明](docs/README.md)
+## ✨ 功能特色
 
-## 🎯 项目特色
+- **智能章节识别**：自动提取中英文章节标题
+- **多格式输出**：同时生成Markdown和纯文本格式
+- **完整文档结构**：
+  - 单独章节文件（markdown/ 和 txt/ 目录）
+  - 完整合并文档（complete.md 和 complete_structured.txt）
+  - 目录索引文件（index.md 和 index.txt）
+- **智能文件命名**：根据章节内容自动生成有意义的文件名
+- **图片提取**：自动提取并保存书中的图片到images目录
 
-- **智能识别**：自动提取中英文章节标题
-- **多格式输出**：支持Markdown和纯文本
-- **完整文档**：详细的使用说明和故障排除指南
-- **标准化管理**：规范的Git工作流程和项目组织
-- **可扩展架构**：支持多种类型项目的添加
+## 📁 输出结构
 
-## 📖 现有工具
+处理完成后会在同名目录下生成：
 
-### 🔧 脚本工具
-- **切书神技** (`scripts/切书神技.zsh`) - 智能EPUB电子书切分工具
-
-### 📚 文档系统
-- **故障排除指南** (`docs/troubleshooting-guide.md`) - 技术问题诊断和解决
-- **快速参考** (`docs/quick-reference.md`) - 常用命令和操作速查
-- **项目管理指南** (`docs/project-management-guide.md`) - 新项目添加流程
-
-## ➕ 如何添加新项目
-
-查看详细指南：[项目管理指南](docs/project-management-guide.md)
-
-### 快速添加流程：
-```bash
-# 1. 创建功能分支
-git checkout -b add/your-project
-
-# 2. 按类型添加到相应目录
-# scripts/    - 脚本工具
-# projects/   - 完整项目  
-# notes/      - 学习笔记
-# tools/      - 小工具
-# templates/  - 项目模板
-
-# 3. 提交和合并
-git add .
-git commit -m "Add [类型]: [描述]"
-git checkout main
-git merge --no-ff add/your-project
+```
+your-book/
+├── html/                    # 原始HTML文件
+├── markdown/                # Markdown格式章节
+│   ├── index.md            # 目录索引
+│   ├── 第一章_开始.md       # 各章节文件
+│   └── ...
+├── txt/                     # 纯文本格式章节
+│   ├── index.txt           # 目录索引
+│   ├── 第一章_开始.txt      # 各章节文件
+│   └── ...
+├── images/                  # 提取的图片文件
+├── complete.md              # 完整Markdown文档
+└── complete_structured.txt  # 完整结构化文本
 ```
 
-## 🔧 故障排除
+## 🔧 系统要求
 
-遇到问题？查看：[故障排除指南](docs/troubleshooting-guide.md)
+- macOS系统
+- 已安装Pandoc：`brew install pandoc`
+- zsh shell（macOS默认）
 
-常见问题快速解决：
-- **网络连接问题**：DNS配置和GitHub访问
-- **Git推送失败**：多种备用推送方案
-- **工具权限问题**：文件权限设置
+## 💡 使用技巧
 
-## 📞 快速参考
-
-日常操作速查：[快速参考指南](docs/quick-reference.md)
+1. **文件路径**：支持拖拽EPUB文件到终端获取路径
+2. **批量处理**：可以编写简单的循环脚本处理多个文件
+3. **自定义输出**：可以根据需要修改脚本中的输出格式
 
 ---
 
-💡 **学习即螺旋上升，工具让进步更高效！**
-
-🎯 **目标**：构建一个完整的学习工具生态系统，让知识管理和技能提升更加系统化。 
+🎯 **让电子书阅读和整理更高效！** 
